@@ -9,7 +9,7 @@ from pyspark.sql.types import *
 # COMMAND ----------
 
 dbutils.widgets.text("container", "raw")
-dbutils.widgets.text("catalogo", "catalog_sd")
+dbutils.widgets.text("catalogo", "catalog_smartdata")
 dbutils.widgets.text("esquema", "bronze")
 dbutils.widgets.text("datalake", "adlslakedev006")
 
