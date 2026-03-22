@@ -127,7 +127,7 @@ jobs:
           "format": "MULTI_TASK",
           "run_as": {
             "user_name": "lali_mendoza@hotmail.com"
-           },
+            },
           "tasks": [
            {
               "task_key": "PrepAmb",
