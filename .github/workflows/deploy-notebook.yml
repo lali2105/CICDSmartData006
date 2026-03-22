@@ -133,7 +133,7 @@ jobs:
                 "notebook_path": "/py/scripts/main/Preparacion_Ambiente",
                 "source": "WORKSPACE",
                  "base_parameters": {
-                  "storageLocation": "adlslakedev006"
+                 "storageLocation": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -148,7 +148,7 @@ jobs:
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
-                  "catalogo": "catalogo_smartdata",
+                  "catalogo": "catalog_smartdata",
                   "esquema": "bronze",
                   "storageLocation": "adlslakedev006"
                 }
@@ -170,7 +170,7 @@ jobs:
               "source": "WORKSPACE",
               base_parameters": {
                   "container": "raw",
-                  "catalogo": "catalogo_smartdata",
+                  "catalogo": "catalog_smartdata",
                   "esquema": "bronze",
                   "storageLocation": "adlslakedev006"
                 }
@@ -191,7 +191,7 @@ jobs:
               "notebook_path": "/py/scripts/main/Transform",
               "source": "WORKSPACE",
                base_parameters": {
-                  "container": "catalogo_smartdata",
+                  "container": "catalog_smartdata",
                   "catalogo": "bronze",
                   "esquema": "silver"
                 }
@@ -215,7 +215,7 @@ jobs:
               "notebook_path": "/py/scripts/main/Load",
               "source": "WORKSPACE",
                base_parameters": {
-                  "container": "catalogo_smartdata",
+                  "container": "catalog_smartdata",
                   "catalogo": "silver",
                   "esquema": "golden"
                 }
