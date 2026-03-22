@@ -133,7 +133,7 @@ jobs:
                 "notebook_path": "/py/scripts/main/Preparacion_Ambiente",
                 "source": "WORKSPACE",
                  "base_parameters": {
-                 "storageLocation": "adlslakedev006"
+                 "storageName": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -144,13 +144,13 @@ jobs:
               "task_key": "Ingest_circuits",
               "description": "Ejecuta notebook Ingest_circuits",
               "notebook_task": {
-                "notebook_path": "/py/scripts/main/Ingest_circuits_data",
-                "source": "WORKSPACE",
-                "base_parameters": {
+              "notebook_path": "/py/scripts/main/Ingest_circuits_data",
+              "source": "WORKSPACE",
+              "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_smartdata",
                   "esquema": "bronze",
-                  "storageLocation": "adlslakedev006"
+                  "datalake": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -168,11 +168,11 @@ jobs:
               "notebook_task": {
               "notebook_path": "/py/scripts/main/Ingest_racing_data",
               "source": "WORKSPACE",
-              base_parameters": {
+              "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_smartdata",
                   "esquema": "bronze",
-                  "storageLocation": "adlslakedev006"
+                  "datalake": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -190,10 +190,10 @@ jobs:
               "notebook_task": {
               "notebook_path": "/py/scripts/main/Transform",
               "source": "WORKSPACE",
-               base_parameters": {
-                  "container": "catalog_smartdata",
-                  "catalogo": "bronze",
-                  "esquema": "silver"
+              "base_parameters": {
+                  "catalogo": "catalog_smartdata",
+                  "esquema_source": "bronze",
+                  "esquema_sink": "silver"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -214,10 +214,10 @@ jobs:
               "notebook_task": {
               "notebook_path": "/py/scripts/main/Load",
               "source": "WORKSPACE",
-               base_parameters": {
-                  "container": "catalog_smartdata",
-                  "catalogo": "silver",
-                  "esquema": "golden"
+              "base_parameters": {
+                  "catalogo": "catalog_smartdata",
+                  "esquema_source": "silver",
+                  "esquema_sink": "golden"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
