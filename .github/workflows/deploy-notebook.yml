@@ -149,7 +149,8 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalogo_smartdata",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
+                  "storageLocation": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -167,10 +168,11 @@ jobs:
               "notebook_task": {
               "notebook_path": "/py/scripts/main/Ingest_racing_data",
               "source": "WORKSPACE",
-               base_parameters": {
+              base_parameters": {
                   "container": "raw",
                   "catalogo": "catalogo_smartdata",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
+                  "storageLocation": "adlslakedev006"
                 }
               },
               "existing_cluster_id": "$CLUSTER_ID",
