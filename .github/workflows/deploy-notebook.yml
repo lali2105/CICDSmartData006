@@ -18,7 +18,7 @@ jobs:
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_BASE="/Workspace/Users/lali_mendoza@hotmail.com/CICDSmartData006/Procesos"
-        NOTEBOOKS=("Ingest_circuits_data" "Ingest_racing_data" "Load" "Transform" "Preparacion_Ambiente")  # Agrega más según necesitesas
+        NOTEBOOKS=("Ingest_circuits_data" "Ingest_racing_data" "Load" "Transform" "Preparacion_Ambiente_py")  # Agrega más según necesitesas
         mkdir -p notebooks_to_deploy
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
@@ -133,7 +133,7 @@ jobs:
               "task_key": "PrepAmb",
               "description": "Ejecuta notebook Preparacion Ambiente",
               "notebook_task": {
-                "notebook_path": "/py/scripts/main/Preparacion_Ambiente",
+                "notebook_path": "/py/scripts/main/Preparacion_Ambiente_py",
                 "source": "WORKSPACE",
                  "base_parameters": {
                  "storageName": "adlslakedev006"
